@@ -1,3 +1,3 @@
 f1_cache/
-.ipynb_checkpoints/
-data/raw/
+*.ff1pkl
+*.sqlite
