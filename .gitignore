@@ -1,3 +1,4 @@
 f1_cache/
 *.ff1pkl
 *.sqlite
+.venv/
