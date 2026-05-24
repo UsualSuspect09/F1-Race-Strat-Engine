@@ -6,6 +6,10 @@ from sklearn.preprocessing import MinMaxScaler
 # Enable F1_cache to speed up data retrieval
 fastf1.Cache.enable_cache("f1_cache")
 
+session_order = ['FP1', 'FP2', 'FP3', 'Q', 'R']
+
+
+
 def time_to_seconds(x):
 
     if pd.isna(x):
@@ -74,7 +78,7 @@ def collect_driver_data(year):
 #     "datasets/raw_driver_2024.csv",
 #     index=False
 # )
-
+# ---------------Function to clean driver data ---------------
 def clean_driver_data(driver_df):
 
     # Make copy
@@ -170,13 +174,16 @@ def clean_driver_data(driver_df):
     return cleaned_df
 
 
-driver_df_2024 = pd.read_csv("datasets/2024 Datasets/raw_driver_2024.csv")
-
+cleaned_driver_2024 = pd.read_csv(
+    "datasets/2024 Datasets/cleaned_driver_2024.csv"
+)
 # cleaned_df_2024 = clean_driver_data(driver_df_2024)
 
 # cleaned_df_2024.to_csv("datasets/2024 Datasets/cleaned_driver_2024.csv", index=False)
 
 # print("Data collection and cleaning complete!")
+
+# -----------Function to collect weather data for a given year----------------
 
 def collect_weather(year):
 
@@ -230,12 +237,69 @@ def collect_weather(year):
 
     return weather_df
 
-weather_2024 = collect_weather(2024)
+# weather_2024 = collect_weather(2024)
 
-weather_2024.to_csv(
-    "datasets/2024 Datasets/weather_2024.csv",
-    index=False
+# weather_2024.to_csv(
+#     "datasets/2024 Datasets/weather_2024.csv",
+#     index=False
+# )
+
+
+#Function to clean weather data
+
+def clean_weather_data(weather_df):
+
+    cleaned_weather = weather_df.copy()
+
+    # Remove duplicates
+    cleaned_weather = cleaned_weather.drop_duplicates()
+
+    # Forward fill missing values
+    cleaned_weather = cleaned_weather.ffill()
+
+    # Numeric weather columns
+    num_cols = [
+        'AirTemp',
+        'Humidity',
+        'Pressure',
+        'TrackTemp',
+        'WindDirection',
+        'WindSpeed'
+    ]
+
+    cleaned_weather[num_cols] = (
+        cleaned_weather[num_cols]
+        .astype(float)
+    )
+
+    return cleaned_weather
+
+# weather_2024 = pd.read_csv(
+#     "datasets/2024 Datasets/weather_2024.csv"
+# )
+
+# cleaned_weather_2024 = clean_weather_data(
+#     weather_2024
+# )
+
+# cleaned_weather_2024.to_csv(
+#     "datasets/2024 Datasets/cleaned_weather_2024.csv",
+#     index=False
+# )
+
+def apply_session_order(df):
+
+    df['Session'] = pd.Categorical(
+        df['Session'],
+        categories=session_order,
+        ordered=True
+    )
+
+    return df
+
+apply_session_order(cleaned_driver_2024)
+print("Session column converted to ordered categorical")
+cleaned_driver_2024.to_csv(
+    "datasets/2024 Datasets/cleaned_driver_2024_Sessionned.csv", index=False
 )
-
-print("Saved 2024 weather data")
-
+print("Applied session order and saved cleaned driver data with Session as categorical")
