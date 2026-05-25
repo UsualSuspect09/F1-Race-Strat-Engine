@@ -31,35 +31,39 @@ def collect_driver_data(year):
         include_testing=False
     )
 
+    sessions = ["FP1", "FP2", "FP3", "Q", "R"]
+
     for rnd, row in tqdm(
         schedule.iterrows(),
         total=len(schedule),
         desc=f"Collecting {year} race data"
     ):
 
-        try:
+        event = fastf1.get_event(year, rnd)
 
-            event = fastf1.get_event(year, rnd)
+        for s in sessions:
 
-            session = event.get_session("R")
+            try:
 
-            session.load()
+                session = event.get_session(s)
 
-            laps = session.laps.copy()
+                session.load()
 
-            # metadata
-            laps["RoundNumber"] = rnd
-            laps["GP"] = event.EventName
-            laps["Session"] = "R"
-            laps["Date"] = event.EventDate
+                laps = session.laps.copy()
 
-            all_laps.append(laps)
+                # metadata
+                laps["RoundNumber"] = rnd
+                laps["GP"] = event.EventName
+                laps["Session"] = s
+                laps["Date"] = event.EventDate
 
-            print(f"Loaded {event.EventName}")
+                all_laps.append(laps)
 
-        except Exception as e:
+                print(f"Loaded {event.EventName} - {s}")
 
-            print(f"Skipped round {rnd}: {e}")
+            except Exception as e:
+
+                print(f"Skipped round {rnd} {s}: {e}")
 
     driver_df = pd.concat(
         all_laps,
@@ -68,16 +72,16 @@ def collect_driver_data(year):
 
     return driver_df
 
-# driver_df_2024 = collect_driver_data(2024)
+driver_df_2024 = collect_driver_data(2024)
 
-# print(driver_df_2024.shape)
+print(driver_df_2024.shape)
 
-# print(driver_df_2024.head())
+print(driver_df_2024.head())
 
-# driver_df_2024.to_csv(
-#     "datasets/raw_driver_2024.csv",
-#     index=False
-# )
+driver_df_2024.to_csv(
+    "datasets/2024 Datasets/raw_driver_2024.csv",
+    index=False
+)
 # ---------------Function to clean driver data ---------------
 def clean_driver_data(driver_df):
 
@@ -297,9 +301,3 @@ def apply_session_order(df):
 
     return df
 
-apply_session_order(cleaned_driver_2024)
-print("Session column converted to ordered categorical")
-cleaned_driver_2024.to_csv(
-    "datasets/2024 Datasets/cleaned_driver_2024_Sessionned.csv", index=False
-)
-print("Applied session order and saved cleaned driver data with Session as categorical")
