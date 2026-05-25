@@ -178,8 +178,8 @@ def clean_driver_data(driver_df):
     return cleaned_df
 
 
-cleaned_driver_2024 = pd.read_csv(
-    "datasets/2024 Datasets/cleaned_driver_2024.csv"
+# cleaned_driver_2024 = pd.read_csv(
+#     "datasets/2024 Datasets/cleaned_driver_2024.csv"
 )
 # cleaned_df_2024 = clean_driver_data(driver_df_2024)
 
