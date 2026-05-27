@@ -314,7 +314,7 @@ def apply_session_order(df):
 def sort_driver_data(driver_df):
 
     return driver_df.sort_values(
-        ['RoundNumber', 'Session', 'LapNumber']
+        ['RoundNumber', 'Session','Driver', 'LapNumber']
     ).reset_index(drop=True)
 
 def sort_weather_data(weather_df):
@@ -323,11 +323,6 @@ def sort_weather_data(weather_df):
         ['RoundNumber', 'Session', 'Time']
     ).reset_index(drop=True)
 
-sorted_driver_data = sort_driver_data(
-    cleaned_driver
-)
-sorted_driver_data.to_csv(
-    "datasets/2024/sorted_driver_2024.csv",
-    index=False
-)
+cleaned_driver = sort_driver_data(cleaned_driver)
 print("Sorted driver data!")
+cleaned_driver.to_csv("datasets/2024/sorted_driver_2024.csv", index=False)
