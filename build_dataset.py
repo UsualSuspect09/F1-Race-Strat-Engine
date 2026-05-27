@@ -3,10 +3,18 @@ import fastf1
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
 
-cleaned_driver = pd.read_csv(
-    "datasets/2024/cleaned_driver_2024.csv")
-cleaned_weather = pd.read_csv(
-    "datasets/2024/cleaned_weather_2024.csv")
+# cleaned_driver = pd.read_csv(
+#     "datasets/2024/cleaned_driver_2024.csv")
+# cleaned_weather = pd.read_csv(
+#     "datasets/2024/cleaned_weather_2024.csv")
+
+sorted_driver = pd.read_csv(
+    "datasets/2024/sorted_driver_2024.csv"
+)
+sorted_weather = pd.read_csv(
+    "datasets/2024/sorted_weather_2024.csv"
+)
+
 
 # Enable F1_cache to speed up data retrieval
 fastf1.Cache.enable_cache("f1_cache")
@@ -307,10 +315,6 @@ def apply_session_order(df):
     return df
 
 
-
-# driver_sessioned = apply_session_order(cleaned_driver)
-
-
 def sort_driver_data(driver_df):
 
     return driver_df.sort_values(
@@ -323,6 +327,60 @@ def sort_weather_data(weather_df):
         ['RoundNumber', 'Session', 'Time']
     ).reset_index(drop=True)
 
-cleaned_driver = sort_driver_data(cleaned_driver)
-print("Sorted driver data!")
-cleaned_driver.to_csv("datasets/2024/sorted_driver_2024.csv", index=False)
+def normalize_driver_data(driver_df):
+
+    normalized_df = driver_df.copy()
+
+    scaler = MinMaxScaler()
+
+    cols_to_normalize = [
+        'LapTime',
+        'Sector1Time',
+        'Sector2Time',
+        'Sector3Time',
+        'TyreLife'
+    ]
+
+    normalized_df[cols_to_normalize] = scaler.fit_transform(
+        normalized_df[cols_to_normalize]
+    )
+
+    return normalized_df
+
+def normalize_weather_data(weather_df):
+
+    normalized_weather = weather_df.copy()
+
+    scaler = MinMaxScaler()
+
+    cols_to_normalize = [
+        'AirTemp',
+        'Humidity',
+        'Pressure',
+        'TrackTemp',
+        'WindDirection',
+        'WindSpeed'
+    ]
+
+    normalized_weather[cols_to_normalize] = scaler.fit_transform(
+        normalized_weather[cols_to_normalize]
+    )
+
+    return normalized_weather
+
+normalized_driver_2024 = normalize_driver_data(
+    sorted_driver
+)
+normalized_driver_2024.to_csv(
+    "datasets/2024/normalized_driver_2024.csv",
+    index=False
+)
+
+normalized_weather_2024 = normalize_weather_data(
+    sorted_weather
+)
+normalized_weather_2024.to_csv(
+    "datasets/2024/normalized_weather_2024.csv",
+    index=False
+)
+print("Normalized driver and weather data!")
