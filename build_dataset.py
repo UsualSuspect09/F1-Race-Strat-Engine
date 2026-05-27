@@ -3,6 +3,11 @@ import fastf1
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
 
+cleaned_driver = pd.read_csv(
+    "datasets/2024/cleaned_driver_2024.csv")
+cleaned_weather = pd.read_csv(
+    "datasets/2024/cleaned_weather_2024.csv")
+
 # Enable F1_cache to speed up data retrieval
 fastf1.Cache.enable_cache("f1_cache")
 
@@ -72,16 +77,16 @@ def collect_driver_data(year):
 
     return driver_df
 
-driver_df_2024 = collect_driver_data(2024)
+# driver_df_2024 = collect_driver_data(2024)
 
-print(driver_df_2024.shape)
+# print(driver_df_2024.shape)
 
-print(driver_df_2024.head())
+# print(driver_df_2024.head())
 
-driver_df_2024.to_csv(
-    "datasets/2024 Datasets/raw_driver_2024.csv",
-    index=False
-)
+# driver_df_2024.to_csv(
+#     "datasets/2024 Datasets/raw_driver_2024.csv",
+#     index=False
+# )
 # ---------------Function to clean driver data ---------------
 def clean_driver_data(driver_df):
 
@@ -178,14 +183,14 @@ def clean_driver_data(driver_df):
     return cleaned_df
 
 
-# cleaned_driver_2024 = pd.read_csv(
-#     "datasets/2024 Datasets/cleaned_driver_2024.csv"
-)
-# cleaned_df_2024 = clean_driver_data(driver_df_2024)
+# raw_driver_2024 = pd.read_csv(
+#     "datasets/2024/raw_driver_2024.csv"
+# )
+# cleaned_df_2024 = clean_driver_data(raw_driver_2024)
 
-# cleaned_df_2024.to_csv("datasets/2024 Datasets/cleaned_driver_2024.csv", index=False)
+# cleaned_df_2024.to_csv("datasets/2024/cleaned_driver_2024.csv", index=False)
 
-# print("Data collection and cleaning complete!")
+# print("Cleaned driver data!")
 
 # -----------Function to collect weather data for a given year----------------
 
@@ -244,7 +249,7 @@ def collect_weather(year):
 # weather_2024 = collect_weather(2024)
 
 # weather_2024.to_csv(
-#     "datasets/2024 Datasets/weather_2024.csv",
+#     "datasets/2024/weather_2024.csv",
 #     index=False
 # )
 
@@ -279,7 +284,7 @@ def clean_weather_data(weather_df):
     return cleaned_weather
 
 # weather_2024 = pd.read_csv(
-#     "datasets/2024 Datasets/weather_2024.csv"
+#     "datasets/2024/weather_2024.csv"
 # )
 
 # cleaned_weather_2024 = clean_weather_data(
@@ -287,7 +292,7 @@ def clean_weather_data(weather_df):
 # )
 
 # cleaned_weather_2024.to_csv(
-#     "datasets/2024 Datasets/cleaned_weather_2024.csv",
+#     "datasets/2024/cleaned_weather_2024.csv",
 #     index=False
 # )
 
@@ -301,3 +306,28 @@ def apply_session_order(df):
 
     return df
 
+
+
+# driver_sessioned = apply_session_order(cleaned_driver)
+
+
+def sort_driver_data(driver_df):
+
+    return driver_df.sort_values(
+        ['RoundNumber', 'Session', 'LapNumber']
+    ).reset_index(drop=True)
+
+def sort_weather_data(weather_df):
+
+    return weather_df.sort_values(
+        ['RoundNumber', 'Session', 'Time']
+    ).reset_index(drop=True)
+
+sorted_driver_data = sort_driver_data(
+    cleaned_driver
+)
+sorted_driver_data.to_csv(
+    "datasets/2024/sorted_driver_2024.csv",
+    index=False
+)
+print("Sorted driver data!")
