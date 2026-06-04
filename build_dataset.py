@@ -2,11 +2,34 @@ import pandas as pd
 import fastf1
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
+import os
 
-# cleaned_driver = pd.read_csv(
-#     "datasets/2024/cleaned_driver_2024.csv")
-# cleaned_weather = pd.read_csv(
-#     "datasets/2024/cleaned_weather_2024.csv")
+def create_folders(year):
+
+    base_path = os.path.join(
+        "datasets",
+        str(year)
+    )
+
+    folders = [
+        "raw",
+        "cleaned",
+        "sessioned",
+        "sorted",
+        "normalized"
+    ]
+
+    for folder in folders:
+
+        os.makedirs(
+            os.path.join(base_path, folder),
+            exist_ok=True
+        )
+
+    print(
+        f"Created dataset structure for {year}"
+    )
+
 
 sorted_driver = pd.read_csv(
     "datasets/2024/sorted_driver_2024.csv"
@@ -368,19 +391,4 @@ def normalize_weather_data(weather_df):
 
     return normalized_weather
 
-normalized_driver_2024 = normalize_driver_data(
-    sorted_driver
-)
-normalized_driver_2024.to_csv(
-    "datasets/2024/normalized_driver_2024.csv",
-    index=False
-)
 
-normalized_weather_2024 = normalize_weather_data(
-    sorted_weather
-)
-normalized_weather_2024.to_csv(
-    "datasets/2024/normalized_weather_2024.csv",
-    index=False
-)
-print("Normalized driver and weather data!")
