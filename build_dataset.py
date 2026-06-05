@@ -395,6 +395,8 @@ def normalize_weather_data(weather_df):
     return normalized_weather
 
 def main():
+    driver_df = None
+    weather_df = None
 
     year = int(
         input("Enter season: ")
@@ -447,48 +449,116 @@ def main():
     print("Driver pipeline completed.")
 
     run_weather = input(
-    "Collect and clean weather data? (Y/N): "
-).upper()
+        "Collect and clean weather data? (Y/N): "
+    ).upper()
 
     if run_weather != "Y":
-
         print("Pipeline stopped.")
-    return
+        return
 
-# -------------------------
-# Collect Weather Data
-# -------------------------
+    # -------------------------
+    # Collect Weather Data
+    # -------------------------
 
-weather_df = collect_weather_data(year)
+    weather_df = collect_weather_data(year)
 
-save_df(
-    weather_df,
-    f"{base_path}/raw/weather_raw.csv"
-)
+    save_df(
+        weather_df,
+        f"{base_path}/raw/weather_raw.csv"
+    )
 
-# -------------------------
-# Clean Weather Data
-# -------------------------
+    # -------------------------
+    # Clean Weather Data
+    # -------------------------
 
-weather_df = clean_weather_data(weather_df)
+    weather_df = clean_weather_data(weather_df)
 
-save_df(
-    weather_df,
-    f"{base_path}/cleaned/weather_cleaned.csv"
-)
+    save_df(
+        weather_df,
+        f"{base_path}/cleaned/weather_cleaned.csv"
+    )
 
-# -------------------------
-# Apply Session Ordering
-# -------------------------
+    # -------------------------
+    # Apply Session Ordering
+    # -------------------------
 
-weather_df = apply_session_order(weather_df)
+    weather_df = apply_session_order(weather_df)
 
-save_df(
-    weather_df,
-    f"{base_path}/sessioned/weather_sessioned.csv"
-)
+    save_df(
+        weather_df,
+        f"{base_path}/sessioned/weather_sessioned.csv"
+    )
 
-print("Weather pipeline completed.")
+    print("Weather pipeline completed.")
+
+    run_sort = input(
+        "Sort datasets? (Y/N): "
+    ).upper()
+
+    if run_sort != "Y":
+        print("Pipeline stopped.")
+        return
+
+    # -------------------------
+    # Sort Driver Data
+    # -------------------------
+
+    driver_df = sort_driver_data(driver_df)
+
+    save_df(
+        driver_df,
+        f"{base_path}/sorted/driver_sorted.csv"
+    )
+
+    # -------------------------
+    # Sort Weather Data
+    # -------------------------
+
+    weather_df = sort_weather_data(weather_df)
+
+    save_df(
+        weather_df,
+        f"{base_path}/sorted/weather_sorted.csv"
+    )
+
+    print("Sorting completed.")
+
+    run_normalize = input(
+        "Normalize datasets? (Y/N): "
+    ).upper()
+
+    if run_normalize != "Y":
+        print("Pipeline stopped.")
+        return
+
+    # -------------------------
+    # Normalize Driver Data
+    # -------------------------
+
+    normalized_driver = normalize_driver_data(
+        driver_df
+    )
+
+    save_df(
+        normalized_driver,
+        f"{base_path}/normalized/driver_normalized.csv"
+    )
+
+    # -------------------------
+    # Normalize Weather Data
+    # -------------------------
+
+    normalized_weather = normalize_weather_data(
+        weather_df
+    )
+
+    save_df(
+        normalized_weather,
+        f"{base_path}/normalized/weather_normalized.csv"
+    )
+
+    print("Normalization completed.")
+    print("Dataset pipeline completed successfully.")
 
 if __name__ == "__main__":
     main()
