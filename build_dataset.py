@@ -29,14 +29,17 @@ def create_folders(year):
     print(
         f"Created dataset structure for {year}"
     )
+    return base_path
 
 
-sorted_driver = pd.read_csv(
-    "datasets/2024/sorted_driver_2024.csv"
-)
-sorted_weather = pd.read_csv(
-    "datasets/2024/sorted_weather_2024.csv"
-)
+def save_df(df, filepath):
+
+    df.to_csv(
+        filepath,
+        index=False
+    )
+
+    print(f"Saved: {filepath}")
 
 
 # Enable F1_cache to speed up data retrieval
@@ -225,7 +228,7 @@ def clean_driver_data(driver_df):
 
 # -----------Function to collect weather data for a given year----------------
 
-def collect_weather(year):
+def collect_weather_data(year):
 
     all_weather = []
 
@@ -391,4 +394,101 @@ def normalize_weather_data(weather_df):
 
     return normalized_weather
 
+def main():
 
+    year = int(
+        input("Enter season: ")
+    )
+
+    base_path = create_folders(year)
+
+    run_driver = input(
+        "Collect and clean driver data? (Y/N): "
+    ).upper()
+
+    if run_driver != "Y":
+
+        print("Pipeline stopped.")
+        return
+
+    # -------------------------
+    # Collect Driver Data
+    # -------------------------
+
+    driver_df = collect_driver_data(year)
+
+    save_df(
+        driver_df,
+        f"{base_path}/raw/driver_raw.csv"
+    )
+
+    # -------------------------
+    # Clean Driver Data
+    # -------------------------
+
+    driver_df = clean_driver_data(driver_df)
+
+    save_df(
+        driver_df,
+        f"{base_path}/cleaned/driver_cleaned.csv"
+    )
+
+    # -------------------------
+    # Apply Session Ordering
+    # -------------------------
+
+    driver_df = apply_session_order(driver_df)
+
+    save_df(
+        driver_df,
+        f"{base_path}/sessioned/driver_sessioned.csv"
+    )
+
+    print("Driver pipeline completed.")
+
+    run_weather = input(
+    "Collect and clean weather data? (Y/N): "
+).upper()
+
+    if run_weather != "Y":
+
+        print("Pipeline stopped.")
+    return
+
+# -------------------------
+# Collect Weather Data
+# -------------------------
+
+weather_df = collect_weather_data(year)
+
+save_df(
+    weather_df,
+    f"{base_path}/raw/weather_raw.csv"
+)
+
+# -------------------------
+# Clean Weather Data
+# -------------------------
+
+weather_df = clean_weather_data(weather_df)
+
+save_df(
+    weather_df,
+    f"{base_path}/cleaned/weather_cleaned.csv"
+)
+
+# -------------------------
+# Apply Session Ordering
+# -------------------------
+
+weather_df = apply_session_order(weather_df)
+
+save_df(
+    weather_df,
+    f"{base_path}/sessioned/weather_sessioned.csv"
+)
+
+print("Weather pipeline completed.")
+
+if __name__ == "__main__":
+    main()
