@@ -18,3 +18,23 @@ Best Ridge MAE (All Races):
 
 Best Ridge MAE (Dry-Only):
 5.830
+
+Ridge Frozen Features:
+GP
+Compound
+Stint
+GP_Stint
+Compound_Stint
+Season
+AirTemp
+TrackTemp
+RaceProgress
+
+Dataset:
+Dry-only
+
+Model:
+Ridge
+
+MAE:
+~5.68
