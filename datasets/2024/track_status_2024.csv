@@ -1,0 +1,225 @@
+Time,Status,Message,GP,Year
+0 days 00:00:00,2,Yellow,Pre-Season Testing,2024
+0 days 00:00:03.251000,1,AllClear,Pre-Season Testing,2024
+0 days 00:00:09.253000,2,Yellow,Pre-Season Testing,2024
+0 days 00:00:25.453000,1,AllClear,Pre-Season Testing,2024
+0 days 00:10:06.010000,1,AllClear,Bahrain Grand Prix,2024
+0 days 01:00:16.400000,2,Yellow,Bahrain Grand Prix,2024
+0 days 01:00:20.890000,1,AllClear,Bahrain Grand Prix,2024
+0 days 01:00:46.461000,2,Yellow,Bahrain Grand Prix,2024
+0 days 01:00:53.481000,1,AllClear,Bahrain Grand Prix,2024
+0 days 01:15:24.819000,2,Yellow,Bahrain Grand Prix,2024
+0 days 01:16:15.962000,1,AllClear,Bahrain Grand Prix,2024
+0 days 00:00:00,2,Yellow,Saudi Arabian Grand Prix,2024
+0 days 00:08:45.692000,1,AllClear,Saudi Arabian Grand Prix,2024
+0 days 01:09:15.917000,2,Yellow,Saudi Arabian Grand Prix,2024
+0 days 01:09:49.924000,4,SCDeployed,Saudi Arabian Grand Prix,2024
+0 days 01:16:35.527000,1,AllClear,Saudi Arabian Grand Prix,2024
+0 days 00:00:00,1,AllClear,Australian Grand Prix,2024
+0 days 00:00:13.560000,2,Yellow,Australian Grand Prix,2024
+0 days 00:05:52.010000,1,AllClear,Australian Grand Prix,2024
+0 days 01:21:24.717000,2,Yellow,Australian Grand Prix,2024
+0 days 01:21:41.517000,6,VSCDeployed,Australian Grand Prix,2024
+0 days 01:22:45.787000,7,VSCEnding,Australian Grand Prix,2024
+0 days 01:23:00.690000,1,AllClear,Australian Grand Prix,2024
+0 days 02:17:08.699000,2,Yellow,Australian Grand Prix,2024
+0 days 02:17:19.578000,6,VSCDeployed,Australian Grand Prix,2024
+0 days 00:02:10.211000,1,AllClear,Japanese Grand Prix,2024
+0 days 01:03:04.009000,2,Yellow,Japanese Grand Prix,2024
+0 days 01:03:23.324000,5,Red,Japanese Grand Prix,2024
+0 days 01:21:29.956000,1,AllClear,Japanese Grand Prix,2024
+0 days 02:38:44.466000,2,Yellow,Japanese Grand Prix,2024
+0 days 02:39:26.728000,1,AllClear,Japanese Grand Prix,2024
+0 days 00:00:00,2,Yellow,Chinese Grand Prix,2024
+0 days 00:03:43.861000,1,AllClear,Chinese Grand Prix,2024
+0 days 01:29:21.060000,2,Yellow,Chinese Grand Prix,2024
+0 days 01:30:57.310000,6,VSCDeployed,Chinese Grand Prix,2024
+0 days 01:35:02.945000,4,SCDeployed,Chinese Grand Prix,2024
+0 days 01:42:46.489000,1,AllClear,Chinese Grand Prix,2024
+0 days 01:44:08.986000,2,Yellow,Chinese Grand Prix,2024
+0 days 01:44:43.584000,4,SCDeployed,Chinese Grand Prix,2024
+0 days 01:54:29.620000,1,AllClear,Chinese Grand Prix,2024
+0 days 00:00:00,1,AllClear,Miami Grand Prix,2024
+0 days 01:30:16.624000,6,VSCDeployed,Miami Grand Prix,2024
+0 days 01:30:57.133000,7,VSCEnding,Miami Grand Prix,2024
+0 days 01:31:08.221000,1,AllClear,Miami Grand Prix,2024
+0 days 01:38:59.677000,2,Yellow,Miami Grand Prix,2024
+0 days 01:39:25.207000,4,SCDeployed,Miami Grand Prix,2024
+0 days 01:48:20.615000,1,AllClear,Miami Grand Prix,2024
+0 days 00:14:54.798000,1,AllClear,Emilia Romagna Grand Prix,2024
+0 days 00:25:18.219000,2,Yellow,Emilia Romagna Grand Prix,2024
+0 days 00:25:20.767000,1,AllClear,Emilia Romagna Grand Prix,2024
+0 days 00:25:24.863000,2,Yellow,Emilia Romagna Grand Prix,2024
+0 days 00:25:28.047000,1,AllClear,Emilia Romagna Grand Prix,2024
+0 days 00:26:02.940000,2,Yellow,Emilia Romagna Grand Prix,2024
+0 days 00:26:05.527000,1,AllClear,Emilia Romagna Grand Prix,2024
+0 days 00:00:48.957000,1,AllClear,Monaco Grand Prix,2024
+0 days 00:23:00.042000,2,Yellow,Monaco Grand Prix,2024
+0 days 00:23:28.942000,1,AllClear,Monaco Grand Prix,2024
+0 days 00:34:01.046000,2,Yellow,Monaco Grand Prix,2024
+0 days 00:34:55.313000,1,AllClear,Monaco Grand Prix,2024
+0 days 00:55:30.229000,2,Yellow,Monaco Grand Prix,2024
+0 days 00:56:02.453000,5,Red,Monaco Grand Prix,2024
+0 days 01:27:38.765000,1,AllClear,Monaco Grand Prix,2024
+0 days 01:28:21.354000,2,Yellow,Monaco Grand Prix,2024
+0 days 01:28:46.158000,1,AllClear,Monaco Grand Prix,2024
+0 days 01:30:17.702000,2,Yellow,Monaco Grand Prix,2024
+0 days 01:31:21.633000,1,AllClear,Monaco Grand Prix,2024
+0 days 01:35:56.551000,4,SCDeployed,Monaco Grand Prix,2024
+0 days 01:37:45.833000,1,AllClear,Monaco Grand Prix,2024
+0 days 02:45:26.441000,2,Yellow,Monaco Grand Prix,2024
+0 days 02:45:31.016000,1,AllClear,Monaco Grand Prix,2024
+0 days 00:00:00,1,AllClear,Canadian Grand Prix,2024
+0 days 00:04:30.268000,2,Yellow,Canadian Grand Prix,2024
+0 days 00:04:32.269000,1,AllClear,Canadian Grand Prix,2024
+0 days 00:13:19.675000,2,Yellow,Canadian Grand Prix,2024
+0 days 00:13:40.888000,1,AllClear,Canadian Grand Prix,2024
+0 days 00:40:35.477000,2,Yellow,Canadian Grand Prix,2024
+0 days 00:41:20.356000,4,SCDeployed,Canadian Grand Prix,2024
+0 days 00:49:59.274000,1,AllClear,Canadian Grand Prix,2024
+0 days 00:50:05.548000,2,Yellow,Canadian Grand Prix,2024
+0 days 00:50:14.904000,1,AllClear,Canadian Grand Prix,2024
+0 days 01:07:31.649000,2,Yellow,Canadian Grand Prix,2024
+0 days 01:07:35.151000,1,AllClear,Canadian Grand Prix,2024
+0 days 01:18:38.469000,2,Yellow,Canadian Grand Prix,2024
+0 days 01:18:41.982000,1,AllClear,Canadian Grand Prix,2024
+0 days 01:23:05.534000,2,Yellow,Canadian Grand Prix,2024
+0 days 01:23:12.173000,1,AllClear,Canadian Grand Prix,2024
+0 days 01:24:23.842000,2,Yellow,Canadian Grand Prix,2024
+0 days 01:24:53.375000,4,SCDeployed,Canadian Grand Prix,2024
+0 days 01:34:00.072000,1,AllClear,Canadian Grand Prix,2024
+0 days 01:44:40.368000,2,Yellow,Canadian Grand Prix,2024
+0 days 01:45:04.574000,1,AllClear,Canadian Grand Prix,2024
+0 days 00:00:00,2,Yellow,Spanish Grand Prix,2024
+0 days 00:10:00.895000,1,AllClear,Spanish Grand Prix,2024
+0 days 00:09:41.493000,1,AllClear,Austrian Grand Prix,2024
+0 days 02:10:27.621000,2,Yellow,Austrian Grand Prix,2024
+0 days 02:10:31.114000,1,AllClear,Austrian Grand Prix,2024
+0 days 02:12:52.483000,6,VSCDeployed,Austrian Grand Prix,2024
+0 days 02:13:38.250000,7,VSCEnding,Austrian Grand Prix,2024
+0 days 02:13:50.429000,1,AllClear,Austrian Grand Prix,2024
+0 days 00:06:27.196000,1,AllClear,British Grand Prix,2024
+0 days 00:06:31.179000,1,AllClear,Hungarian Grand Prix,2024
+0 days 02:22:30.594000,2,Yellow,Hungarian Grand Prix,2024
+0 days 02:22:34.774000,1,AllClear,Hungarian Grand Prix,2024
+0 days 00:00:00,2,Yellow,Belgian Grand Prix,2024
+0 days 00:03:45.413000,1,AllClear,Belgian Grand Prix,2024
+0 days 01:22:18.736000,2,Yellow,Belgian Grand Prix,2024
+0 days 01:22:20.200000,1,AllClear,Belgian Grand Prix,2024
+0 days 00:00:00,1,AllClear,Dutch Grand Prix,2024
+0 days 00:14:41.553000,2,Yellow,Dutch Grand Prix,2024
+0 days 00:24:08.672000,1,AllClear,Dutch Grand Prix,2024
+0 days 00:13:12.826000,1,AllClear,Italian Grand Prix,2024
+0 days 00:13:39.841000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:13:39.841000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:19:07.406000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:19:13.571000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:27:07.476000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:27:11.287000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:27:15.331000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:27:19.546000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 00:54:14.046000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 00:54:16.527000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 02:01:09.639000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 02:01:14.191000,1,AllClear,Azerbaijan Grand Prix,2024
+0 days 02:25:25.496000,2,Yellow,Azerbaijan Grand Prix,2024
+0 days 02:26:42.569000,6,VSCDeployed,Azerbaijan Grand Prix,2024
+0 days 00:00:00,2,Yellow,Singapore Grand Prix,2024
+0 days 00:00:03.251000,1,AllClear,Singapore Grand Prix,2024
+0 days 00:00:09.253000,2,Yellow,Singapore Grand Prix,2024
+0 days 00:00:25.453000,1,AllClear,Singapore Grand Prix,2024
+0 days 00:00:00,2,Yellow,United States Grand Prix,2024
+0 days 00:08:58.393000,1,AllClear,United States Grand Prix,2024
+0 days 00:57:27.032000,2,Yellow,United States Grand Prix,2024
+0 days 00:57:38.513000,1,AllClear,United States Grand Prix,2024
+0 days 01:00:35.112000,2,Yellow,United States Grand Prix,2024
+0 days 01:01:28.409000,4,SCDeployed,United States Grand Prix,2024
+0 days 01:07:40.524000,1,AllClear,United States Grand Prix,2024
+0 days 01:15:02.847000,2,Yellow,United States Grand Prix,2024
+0 days 01:15:07.470000,1,AllClear,United States Grand Prix,2024
+0 days 02:07:29.886000,2,Yellow,United States Grand Prix,2024
+0 days 02:07:38.510000,1,AllClear,United States Grand Prix,2024
+0 days 00:00:00,2,Yellow,Mexico City Grand Prix,2024
+0 days 00:00:22.917000,1,AllClear,Mexico City Grand Prix,2024
+0 days 00:23:31.553000,2,Yellow,Mexico City Grand Prix,2024
+0 days 00:39:27.571000,1,AllClear,Mexico City Grand Prix,2024
+0 days 00:56:20.860000,2,Yellow,Mexico City Grand Prix,2024
+0 days 00:56:58.362000,4,SCDeployed,Mexico City Grand Prix,2024
+0 days 01:08:29.689000,1,AllClear,Mexico City Grand Prix,2024
+0 days 00:00:00,1,AllClear,São Paulo Grand Prix,2024
+0 days 00:52:58.758000,2,Yellow,São Paulo Grand Prix,2024
+0 days 00:58:32.359000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:13:10.258000,2,Yellow,São Paulo Grand Prix,2024
+0 days 01:13:19.484000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:17:25.352000,2,Yellow,São Paulo Grand Prix,2024
+0 days 01:17:28.803000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:27:37.971000,2,Yellow,São Paulo Grand Prix,2024
+0 days 01:27:48.625000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:47:45.888000,2,Yellow,São Paulo Grand Prix,2024
+0 days 01:47:49.810000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:49:38.987000,2,Yellow,São Paulo Grand Prix,2024
+0 days 01:50:18.848000,6,VSCDeployed,São Paulo Grand Prix,2024
+0 days 01:51:47.994000,7,VSCEnding,São Paulo Grand Prix,2024
+0 days 01:52:01.710000,1,AllClear,São Paulo Grand Prix,2024
+0 days 01:54:50.200000,4,SCDeployed,São Paulo Grand Prix,2024
+0 days 01:59:19.333000,5,Red,São Paulo Grand Prix,2024
+0 days 02:23:12.325000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:26:20.605000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:26:38.296000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:30:40.572000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:30:58.358000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:32:55.981000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:33:04.122000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:35:08.379000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:35:12.045000,4,SCDeployed,São Paulo Grand Prix,2024
+0 days 02:41:26.301000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:43:14.900000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:43:36.771000,1,AllClear,São Paulo Grand Prix,2024
+0 days 02:54:27.095000,2,Yellow,São Paulo Grand Prix,2024
+0 days 02:54:32.696000,1,AllClear,São Paulo Grand Prix,2024
+0 days 00:00:00,2,Yellow,Las Vegas Grand Prix,2024
+0 days 00:04:43.802000,1,AllClear,Las Vegas Grand Prix,2024
+0 days 02:22:12.269000,2,Yellow,Las Vegas Grand Prix,2024
+0 days 00:05:37.763000,1,AllClear,Qatar Grand Prix,2024
+0 days 00:55:07.112000,2,Yellow,Qatar Grand Prix,2024
+0 days 00:55:49.928000,4,SCDeployed,Qatar Grand Prix,2024
+0 days 01:03:27.530000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:04:12.481000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:04:19.563000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:39:34.892000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:39:41.487000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:39:42.909000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:39:45.014000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:39:46.486000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:39:49.144000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:39:50.486000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:39:53.420000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:39:54.499000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:39:54.956000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:47:48.919000,4,SCDeployed,Qatar Grand Prix,2024
+0 days 01:58:24.733000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:59:16.110000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:59:20.165000,1,AllClear,Qatar Grand Prix,2024
+0 days 01:59:26.820000,2,Yellow,Qatar Grand Prix,2024
+0 days 01:59:41.027000,6,VSCDeployed,Qatar Grand Prix,2024
+0 days 02:00:00.846000,4,SCDeployed,Qatar Grand Prix,2024
+0 days 02:04:44.681000,1,AllClear,Qatar Grand Prix,2024
+0 days 00:00:00,1,AllClear,Abu Dhabi Grand Prix,2024
+0 days 00:57:38.172000,2,Yellow,Abu Dhabi Grand Prix,2024
+0 days 00:57:43.506000,1,AllClear,Abu Dhabi Grand Prix,2024
+0 days 00:58:28.274000,2,Yellow,Abu Dhabi Grand Prix,2024
+0 days 00:59:06.540000,6,VSCDeployed,Abu Dhabi Grand Prix,2024
+0 days 01:00:53.361000,7,VSCEnding,Abu Dhabi Grand Prix,2024
+0 days 01:01:03.708000,1,AllClear,Abu Dhabi Grand Prix,2024
+0 days 01:42:34.999000,2,Yellow,Abu Dhabi Grand Prix,2024
+0 days 01:42:38.500000,1,AllClear,Abu Dhabi Grand Prix,2024
+0 days 01:42:39.958000,2,Yellow,Abu Dhabi Grand Prix,2024
+0 days 01:42:46.076000,1,AllClear,Abu Dhabi Grand Prix,2024
+0 days 02:22:08.652000,2,Yellow,Abu Dhabi Grand Prix,2024
+0 days 02:22:34.092000,1,AllClear,Abu Dhabi Grand Prix,2024
