@@ -31,3 +31,84 @@ RACE_LAPS = {
 
 WINDOW_MARGIN = 6
 
+
+
+import pandas as pd
+
+# -----------------------------------
+# Load Master Stint Datasets
+# -----------------------------------
+stint_2023 = pd.read_csv(
+    "C:/Users/VANSH/Formula1/datasets/2023/master_stint_2023_v2.csv"
+)
+
+stint_2024 = pd.read_csv(
+    "C:/Users/VANSH/Formula1/datasets/2024/master_stint_2024_v2.csv"
+)
+
+# -----------------------------------
+# Combine Seasons
+# -----------------------------------
+
+combined_df = pd.concat(
+    [stint_2023, stint_2024],
+    ignore_index=True
+)
+
+# -----------------------------------
+# Calculate GP Weather Averages
+# -----------------------------------
+
+weather_table = (
+    combined_df
+    .groupby("GP")[
+        ["AirTemp", "TrackTemp"]
+    ]
+    .mean()
+    .round(1)
+)
+
+# -----------------------------------
+# Convert To Dictionaries
+# -----------------------------------
+
+avg_air_temp = (
+    weather_table["AirTemp"]
+    .to_dict()
+)
+
+avg_track_temp = (
+    weather_table["TrackTemp"]
+    .to_dict()
+)
+
+# -----------------------------------
+# Save To Python Config File
+# -----------------------------------
+
+with open(
+    "weather_config.py",
+    "w",
+    encoding="utf-8"
+) as file:
+
+    file.write(
+        "# Auto-generated weather configuration\n\n"
+    )
+
+    file.write(
+        f"AVG_AIR_TEMP = {avg_air_temp}\n\n"
+    )
+
+    file.write(
+        f"AVG_TRACK_TEMP = {avg_track_temp}\n"
+    )
+
+print(
+    "weather_config.py created successfully."
+)
+
+print(
+    "\nTotal GPs:",
+    len(avg_air_temp)
+)
