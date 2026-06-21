@@ -38,3 +38,13 @@ Ridge
 
 MAE:
 ~5.68
+
+Phase 2B.7
+XGBoost Baseline
+
+Train MAE: 3.89
+Test MAE: 4.43
+
+Result:
+Strong improvement over Ridge.
+No obvious signs of severe overfitting.

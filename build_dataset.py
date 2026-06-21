@@ -111,15 +111,6 @@ def collect_driver_data(year):
 
     return driver_df
 
-# driver_df_2024 = collect_driver_data(2024)
-
-# print(driver_df_2024.shape)
-
-# print(driver_df_2024.head())
-
-# driver_df_2024.to_csv(
-#     "datasets/2024 Datasets/raw_driver_2024.csv",
-#     index=False
 # )
 # ---------------Function to clean driver data ---------------
 def clean_driver_data(driver_df):
