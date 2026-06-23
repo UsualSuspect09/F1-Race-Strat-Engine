@@ -29,10 +29,6 @@ class RaceSimulator:
 
         for compound in strategy:
 
-            # -------------------------
-            # NORMALIZED RaceProgress
-            # -------------------------
-
             race_progress = (
                 completed_laps /
                 race_laps
@@ -43,17 +39,6 @@ class RaceSimulator:
                     race_progress,
                     3
                 )
-            )
-
-            print("-" * 50)
-            print(
-                f"Compound: {compound}"
-            )
-            print(
-                f"Completed Laps: {completed_laps}"
-            )
-            print(
-                f"Race Progress: {race_progress:.3f}"
             )
 
             stint_length = (
@@ -71,10 +56,6 @@ class RaceSimulator:
                     ],
                     race_progress=race_progress
                 )
-            )
-
-            print(
-                f"Predicted Stint: {stint_length}"
             )
 
             predicted_stints.append(
@@ -97,6 +78,11 @@ class RaceSimulator:
             1
         )
 
+        coverage_margin = round(
+            total_laps - race_laps,
+            1
+        )
+
         return {
 
             "strategy":
@@ -113,6 +99,9 @@ class RaceSimulator:
 
             "race_laps":
                 race_laps,
+
+            "coverage_margin":
+                coverage_margin,
 
             "pit_stops":
                 len(strategy) - 1,
