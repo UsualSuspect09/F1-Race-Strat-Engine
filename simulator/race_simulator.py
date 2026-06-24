@@ -45,6 +45,9 @@ class RaceSimulator:
                 self.predictor
                 .predict_stint_length(
                     compound=compound,
+                    GP=race_context[
+                        "gp_name"
+                    ],
                     air_temp=race_context[
                         "air_temp"
                     ],

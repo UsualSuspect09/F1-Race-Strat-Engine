@@ -1,17 +1,26 @@
 def generate_strategies():
 
     strategies = [
+    # One-stop
 
-        ["SOFT", "HARD"],
+    ["SOFT", "HARD"],
+    ["MEDIUM", "HARD"],
+    ["HARD", "MEDIUM"],
 
-        ["MEDIUM", "HARD"],
+    # Two-stop
 
-        ["SOFT", "MEDIUM", "HARD"],
+    ["SOFT", "HARD", "HARD"],
+    ["MEDIUM", "HARD", "HARD"],
 
-        ["MEDIUM", "SOFT", "HARD"],
+    ["SOFT", "SOFT", "HARD"],
+    ["MEDIUM", "MEDIUM", "HARD"],
 
-        ["HARD", "MEDIUM"]
-    ]
+    ["SOFT", "HARD", "SOFT"],
+    ["MEDIUM", "HARD", "SOFT"],
+
+    ["SOFT", "MEDIUM", "HARD"],
+    ["MEDIUM", "SOFT", "HARD"]
+]
 
     return strategies
 

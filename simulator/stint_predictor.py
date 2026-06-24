@@ -12,9 +12,11 @@ class StintPredictor:
         self.model = joblib.load(
             model_path
         )
+        # Model loaded
 
     def predict_stint_length(
         self,
+        GP,
         compound,
         air_temp,
         track_temp,
@@ -29,6 +31,7 @@ class StintPredictor:
 
         features = pd.DataFrame(
             {
+                "GP": [GP],
                 "Compound": [compound],
                 "AirTemp": [air_temp],
                 "TrackTemp": [track_temp],
@@ -38,7 +41,7 @@ class StintPredictor:
                 "YellowLaps": [yellow_laps],
                 "SCLaps": [sc_laps],
                 "VSCLaps": [vsc_laps],
-                "RedFlagLaps": [redflag_laps]
+                "RedFlagLaps": [redflag_laps],
             }
         )
 
