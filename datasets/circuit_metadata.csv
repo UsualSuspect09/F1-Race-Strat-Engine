@@ -1,25 +1,25 @@
-GP,CircuitType,TrackLength
-Bahrain Grand Prix,Permanent,5.412
-Saudi Arabian Grand Prix,Street,6.174
-Australian Grand Prix,SemiPermanent,5.278
-Azerbaijan Grand Prix,Street,6.003
-Miami Grand Prix,SemiPermanent,5.412
-Monaco Grand Prix,Street,3.337
-Spanish Grand Prix,Permanent,4.657
-Canadian Grand Prix,SemiPermanent,4.361
-Austrian Grand Prix,Permanent,4.326
-British Grand Prix,Permanent,5.891
-Hungarian Grand Prix,Permanent,4.381
-Belgian Grand Prix,Permanent,7.004
-Dutch Grand Prix,Permanent,4.259
-Italian Grand Prix,Permanent,5.793
-Singapore Grand Prix,Street,4.94
-Japanese Grand Prix,Permanent,5.807
-Qatar Grand Prix,Permanent,5.419
-United States Grand Prix,Permanent,5.513
-Mexico City Grand Prix,Permanent,4.304
-São Paulo Grand Prix,Permanent,4.309
-Las Vegas Grand Prix,Street,6.201
-Abu Dhabi Grand Prix,Permanent,5.513
-Emilia Romagna Grand Prix,Permanent,4.909
-Chinese Grand Prix,Permanent,5.451
+GP,CircuitType,TrackLength,TrackAbrasiveness
+Bahrain Grand Prix,Permanent,5.412,VeryHigh
+Saudi Arabian Grand Prix,Street,6.174,Low
+Australian Grand Prix,SemiPermanent,5.278,Medium
+Azerbaijan Grand Prix,Street,6.003,Low
+Miami Grand Prix,SemiPermanent,5.412,Medium
+Monaco Grand Prix,Street,3.337,VeryLow
+Spanish Grand Prix,Permanent,4.657,High
+Canadian Grand Prix,SemiPermanent,4.361,Medium
+Austrian Grand Prix,Permanent,4.326,Medium
+British Grand Prix,Permanent,5.891,VeryHigh
+Hungarian Grand Prix,Permanent,4.381,Medium
+Belgian Grand Prix,Permanent,7.004,Medium
+Dutch Grand Prix,Permanent,4.259,VeryHigh
+Italian Grand Prix,Permanent,5.793,Medium
+Singapore Grand Prix,Street,4.940,Low
+Japanese Grand Prix,Permanent,5.807,High
+Qatar Grand Prix,Permanent,5.419,High
+United States Grand Prix,Permanent,5.513,High
+Mexico City Grand Prix,Permanent,4.304,Low
+São Paulo Grand Prix,Permanent,4.309,High
+Las Vegas Grand Prix,Street,6.201,VeryLow
+Abu Dhabi Grand Prix,Permanent,5.513,Low
+Emilia Romagna Grand Prix,Permanent,4.909,Medium
+Chinese Grand Prix,Permanent,5.451,Medium

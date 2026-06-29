@@ -48,3 +48,18 @@ Test MAE: 4.43
 Result:
 Strong improvement over Ridge.
 No obvious signs of severe overfitting.
+
+
+Model V2:
+GP only
+Test MAE = 3.6645
+
+Model V3:
+GP + CircuitType + TrackLength
+Test MAE = 3.5536
+
+XGBoost Stint Predictor V1
+--------------------------------
+Train MAE : 1.81
+Test MAE  : 3.55
+5-Fold MAE: 3.71 ± 0.12 laps
