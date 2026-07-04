@@ -1,13 +1,16 @@
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import pandas as pd
 
 from src.config import RACE_LAPS
 from src.weather_config import (
     AVG_AIR_TEMP,
     AVG_TRACK_TEMP
 )
-
+CIRCUIT_METADATA = pd.read_csv(
+    "C:/Users/VANSH/Formula1/datasets/circuit_metadata.csv"
+)
 
 def get_race_context(
     season,
@@ -28,6 +31,16 @@ def get_race_context(
         raise ValueError(
             f"{gp_name} not found in AVG_TRACK_TEMP"
         )
+    metadata = CIRCUIT_METADATA[
+        CIRCUIT_METADATA["GP"] == gp_name
+]
+
+    if metadata.empty:
+        raise ValueError(
+            f"{gp_name} not found in circuit metadata"
+    )
+
+    metadata = metadata.iloc[0]
 
     race_context = {
 
@@ -42,18 +55,30 @@ def get_race_context(
             AVG_AIR_TEMP[gp_name],
 
         "track_temp":
-            AVG_TRACK_TEMP[gp_name]
+            AVG_TRACK_TEMP[gp_name],
+        
+        "track_length":
+            float(metadata["TrackLength"]),
+
+        "circuit_type":
+            metadata["CircuitType"],
+
+        "track_abrasiveness":
+            metadata["TrackAbrasiveness"],
+
+        "average_corner_speed":
+            float(metadata["AverageCornerSpeed"]),
 
     }
 
     return race_context
 
 
+if __name__ == "__main__":
 
+    context = get_race_context(
+        season=2024,
+        gp_name="Bahrain Grand Prix"
+    )
 
-context = get_race_context(
-    season=2024,
-    gp_name="Bahrain Grand Prix"
-)
-
-print(context)
+    print(context)

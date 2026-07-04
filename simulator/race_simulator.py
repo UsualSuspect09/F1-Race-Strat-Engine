@@ -1,7 +1,10 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from simulator.stint_predictor import (
     StintPredictor
 )
-
 
 class RaceSimulator:
 
@@ -57,7 +60,19 @@ class RaceSimulator:
                     season=race_context[
                         "season"
                     ],
-                    race_progress=race_progress
+                    race_progress=race_progress,
+                    circuit_type = race_context[
+                        "circuit_type"
+                    ],
+                    track_length = race_context[
+                        "track_length"
+                    ],
+                    track_abrasiveness = race_context[
+                        "track_abrasiveness"
+                    ],
+                    average_corner_speed = race_context[
+                        "average_corner_speed"
+                    ]
                 )
             )
 
@@ -110,6 +125,8 @@ class RaceSimulator:
                 len(strategy) - 1,
 
             "valid":
-                total_laps >= race_laps
+                total_laps >= race_laps,
+            
+            "circuit_type": race_context["circuit_type"]
 
         }

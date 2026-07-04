@@ -1,5 +1,8 @@
 import joblib
 import pandas as pd
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 class StintPredictor:
@@ -22,6 +25,10 @@ class StintPredictor:
         track_temp,
         season,
         race_progress,
+        circuit_type,
+        track_length,
+        track_abrasiveness,
+        average_corner_speed,
         fresh_tyre=1,
         yellow_laps=0,
         sc_laps=0,
@@ -33,6 +40,10 @@ class StintPredictor:
             {
                 "GP": [GP],
                 "Compound": [compound],
+                "CircuitType": [circuit_type],
+                "TrackLength": [track_length],
+                "TrackAbrasiveness": [track_abrasiveness],
+                "AverageCornerSpeed": [average_corner_speed],
                 "AirTemp": [air_temp],
                 "TrackTemp": [track_temp],
                 "Season": [season],
