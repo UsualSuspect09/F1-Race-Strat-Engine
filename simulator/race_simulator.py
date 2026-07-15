@@ -6,6 +6,7 @@ from simulator.stint_predictor import (
     StintPredictor
 )
 
+
 class RaceSimulator:
 
     def __init__(self):
@@ -30,7 +31,8 @@ class RaceSimulator:
             race_context["race_laps"]
         )
 
-        for compound in strategy:
+        # Predict all stints except the final one
+        for compound in strategy[:-1]:
 
             race_progress = (
                 completed_laps /
@@ -61,16 +63,16 @@ class RaceSimulator:
                         "season"
                     ],
                     race_progress=race_progress,
-                    circuit_type = race_context[
+                    circuit_type=race_context[
                         "circuit_type"
                     ],
-                    track_length = race_context[
+                    track_length=race_context[
                         "track_length"
                     ],
-                    track_abrasiveness = race_context[
+                    track_abrasiveness=race_context[
                         "track_abrasiveness"
                     ],
-                    average_corner_speed = race_context[
+                    average_corner_speed=race_context[
                         "average_corner_speed"
                     ]
                 )
@@ -88,6 +90,33 @@ class RaceSimulator:
                     stint_length
                 )
             )
+
+        # Final stint absorbs the remaining laps
+        final_compound = (
+            strategy[-1]
+        )
+
+        race_progress = (
+            completed_laps /
+            race_laps
+        )
+
+        race_progresses.append(
+            round(
+                race_progress,
+                3
+            )
+        )
+
+        final_stint = round(
+            race_laps -
+            completed_laps,
+            1
+        )
+
+        predicted_stints.append(
+            final_stint
+        )
 
         total_laps = round(
             sum(
@@ -126,7 +155,11 @@ class RaceSimulator:
 
             "valid":
                 total_laps >= race_laps,
-            
-            "circuit_type": race_context["circuit_type"]
+
+            "final_compound":
+                final_compound,
+
+            "circuit_type":
+                race_context["circuit_type"]
 
         }
