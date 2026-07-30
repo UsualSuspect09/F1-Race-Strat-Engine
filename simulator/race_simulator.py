@@ -77,19 +77,19 @@ class RaceSimulator:
                     ]
                 )
             )
+            stint_length = round(
+                stint_length
+            )
 
             predicted_stints.append(
-                round(
-                    stint_length,
-                    1
-                )
+                
+                    stint_length
             )
+                 
 
             completed_laps += (
-                round(
                     stint_length
                 )
-            )
 
         # Final stint absorbs the remaining laps
         final_compound = (
