@@ -1,3 +1,4 @@
+import numpy as np
 def generate_strategies():
 
     strategies = [
@@ -30,3 +31,39 @@ if __name__ == "__main__":
     print("Generated Strategies:")
     for strategy in strategies:
         print(f" - {strategy}")
+
+def evaluate_strategies(
+    simulator,
+    race_context,
+    top_n=5
+):
+
+    strategies = generate_strategies()
+
+    results = []
+
+    for strategy in strategies:
+
+        result = simulator.simulate_strategy(
+            strategy=strategy,
+            race_context=race_context
+        )
+
+        balance_score = float(
+            round(
+                np.std(
+                    result["predicted_stints"]
+                ),
+                2
+            )
+        )
+
+        result["balance_score"] = (
+            balance_score
+        )
+
+        results.append(
+            result
+        )
+
+    return results
